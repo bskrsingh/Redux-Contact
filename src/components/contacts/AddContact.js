@@ -1,13 +1,26 @@
 import React,{useState} from 'react';
+import {useDispatch} from "react-redux";
+import {addContact} from '../../action/contactAction'; 
+import shortid from 'shortid';
+import {useHistory} from 'react-router-dom';
 
 const AddContact = () => {
+    let history = useHistory();
+    const dispatch = useDispatch();
     const [name,setName] = useState("");
     const [email,setEmail] = useState("");
     const [phone,setPhone] = useState("");
 
     const createContact = (e)=>{
         e.preventDefault();
-        console.log(name,email,phone)
+        const new_contact = {
+            id:shortid.generate(),
+            name:name,
+            phone:phone,
+            email:email
+        }
+        dispatch(addContact(new_contact));
+        history.push('/');
     }
     return(
         <div className="card border-0 shadow">

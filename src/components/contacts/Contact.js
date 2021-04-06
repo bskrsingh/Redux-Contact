@@ -1,8 +1,8 @@
 import React from 'react';
 import Avatar from 'react-avatar';
 
-const Contact = ({contact}) => {
-    const {name,email,phone} = contact;
+const Contact = ({ contact }) => {
+    const { name, email, phone } = contact;
     return (
         <tr>
             <td>
@@ -11,15 +11,15 @@ const Contact = ({contact}) => {
                     <label className="custom-control-label"></label>
                 </div>
             </td>
-            <td><Avatar className="mr-2" name={name} size="45" round={true}/>{name}</td>
+            <td><Avatar className="mr-2" name={name} size="45" round={true} />{name}</td>
             <td>{phone}</td>
             <td>{email}</td>
             <td className="actions">
                 <a href="#" className="mr-2">
-                <i class="fa fa-edit"></i>
+                    <i className="fa fa-edit"></i>
                 </a>
                 <a href="#">
-                <i class="fa fa-trash"></i>
+                    <i className="fa fa-trash"></i>
                 </a>
             </td>
         </tr>
